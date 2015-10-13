@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Keep score here!</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src="js/baseball.js"></script>
+
+    <style>
+        .myText {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .myText2 {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .teamName {
+            text-align: center;
+        }
+
+        .mySection {
+            border: solid;
+            border-radius: 20px;
+        }
+
+        .teamScore {
+            border: solid;
+            border-radius: 20px;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .myButton {
+            margin-top: 15px;
+        }
+
+        .myBottomButton {
+            margin-bottom: 15px;
+        }
+
+         body {
+             background-color: #009999;
+             color: #06266f;
+         }
+
+        .highlight {
+            background-color: #a64b00;
+            color: #ffd073;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<!--This is the scoreboard display-->
+
+
+
+<div class="container text-center">
+    <div class="row">
+        <div class="col-lg-6" id="teamA">
+            <div class="col-lg-12" id="teamAname"><h1>Astros</h1></div>
+            <div class="col-lg-12" ><h1 id="scoreA2">0</h1></div>
+        </div>
+        <div class="col-lg-6" id="teamB">
+            <div class="col-lg-12" id="teamBname"><h1>Blue Jays</h1></div>
+            <div class="col-lg-12" ><h1 id="scoreB2">0</h1></div>
+        </div>
+    </div>
+    <div class="row table-bordered">
+        <div class="col-xs-2"><h2>Innings</h2></div>
+        <div class="col-xs-1 table-bordered"><h2>1</h2></div>
+        <div class="col-xs-1 table-bordered"><h2>2</h2></div>
+        <div class="col-xs-1 table-bordered"><h2>3</h2></div>
+        <div class="col-xs-1 table-bordered"><h2>4</h2></div>
+        <div class="col-xs-1 table-bordered"><h2>5</h2></div>
+        <div class="col-xs-1 table-bordered"><h2>6</h2></div>
+        <div class="col-xs-1 table-bordered"><h2>7</h2></div>
+        <div class="col-xs-1 table-bordered"><h2>8</h2></div>
+        <div class="col-xs-1 table-bordered"><h2>9</h2></div>
+        <div class="col-xs-1 table-bordered"><h2>10</h2></div>
+    </div>
+    <div class="row table-bordered">
+        <div class="col-xs-2"><h2>Astros</h2></div>
+        <div class="col-xs-1 table-bordered highlight" ><h2 id="top1">0</h2></div>
+        <div class="col-xs-1 table-bordered"><h2 id="top2">0</h2></div>
+        <div class="col-xs-1 table-bordered"><h2 id="top3">0</h2></div>
+        <div class="col-xs-1 table-bordered"><h2 id="top4">0</h2></div>
+        <div class="col-xs-1 table-bordered"><h2 id="top5">0</h2></div>
+        <div class="col-xs-1 table-bordered"><h2 id="top6">0</h2></div>
+        <div class="col-xs-1 table-bordered"><h2 id="top7">0</h2></div>
+        <div class="col-xs-1 table-bordered"><h2 id="top8">0</h2></div>
+        <div class="col-xs-1 table-bordered"><h2 id="top9">0</h2></div>
+        <div class="col-xs-1 table-bordered"><h2 id="top10">0</h2></div>
+    </div>
+    <div class="row table-bordered">
+        <div class="col-xs-2"><h2>Blue Jays</h2></div>
+        <div class="col-xs-1 table-bordered"><h2 id="bottom1">0</h2></div>
+        <div class="col-xs-1 table-bordered"><h2 id="bottom2">0</h2></div>
+        <div class="col-xs-1 table-bordered"><h2 id="bottom3">0</h2></div>
+        <div class="col-xs-1 table-bordered"><h2 id="bottom4">0</h2></div>
+        <div class="col-xs-1 table-bordered"><h2 id="bottom5">0</h2></div>
+        <div class="col-xs-1 table-bordered"><h2 id="bottom6">0</h2></div>
+        <div class="col-xs-1 table-bordered"><h2 id="bottom7">0</h2></div>
+        <div class="col-xs-1 table-bordered"><h2 id="bottom8">0</h2></div>
+        <div class="col-xs-1 table-bordered"><h2 id="bottom9">0</h2></div>
+        <div class="col-xs-1 table-bordered"><h2 id="bottom10">0</h2></div>
+    </div>
+</div>
+
+
+
+<!--This is the scorekeeping part of the page.-->
+
+
+<br/>
+<br/>
+<br/>
+<div class="container">
+    <div class="row mySection">
+        <div id="scoreHead" class="col-lg-4 col-sm-4 myText"><h1>Score</h1></div>
+        <div class="col-lg-1 col-sm-1">
+            <div class="row">
+                <a class="btn btn-primary btn-lg myButton" href="#" onclick="scoreUp()" role="button">+</a>
+            </div>
+            <br/>
+            <div class="row">
+                <a class="btn btn-danger btn-lg myBottomButton" href="#" role="button">-</a>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-sm-4m">
+            <div class="row">
+                <div class="col-lg-6 col-sm-6 teamName"><h1>Astros</h1></div>
+                <div class="col-lg-6 col-sm-6 teamName"><h1>Blue Jays</h1></div>
+            </div>
+            <div class="row">
+                <div class="col-lg-2 col-sm-2 col-sm-offset-2 col-sm-offset-2 teamScore"><h1 id="scoreA" >0</h1></div>
+                <div class="col-lg-2 col-sm-2 col-sm-offset-4 col-sm-offset-4 teamScore"><h1 id="scoreB" >0</h1></div>
+            </div>
+        </div>
+
+    </div>
+    <br/>
+    <br/>
+    <br/>
+    <div class="row mySection">
+        <div id = "inningHead" class="col-lg-4 col-sm-4 myRow myText2"><h1>Inning</h1></div>
+        <div class="col-lg-1 col-sm-1">
+            <div class="row">
+                <a class="btn btn-primary btn-lg myButton" href="#" onclick="inningUp()" role="button">+</a>
+            </div>
+            <br/>
+            <div class="row">
+                <a class="btn btn-danger btn-lg myBottomButton" href="#" role="button">-</a>
+            </div>
+
+        </div>
+
+        <div class="col-lg-4 col-sm-4">
+            <div class="col-lg-6 col-sm-6 myText2"><h1>Inning: </h1></div>
+            <div class="col-lg-6 col-sm-6 myText2"><h1 id="inning" >Top 1</h1></div>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
