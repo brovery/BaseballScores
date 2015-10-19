@@ -13,7 +13,7 @@ var teamBScore = 0;
 
 function inningUp(){
     inningScore = 0;
-
+    document.getElementById(test).className = "";
 
     if(tab == t){
         tab = b;
@@ -23,7 +23,23 @@ function inningUp(){
     }
     test = tab + inning;
     document.getElementById("inning").innerHTML = test;
+    document.getElementById(test).className = "highlight";
 }
+
+function inningDown(){
+    document.getElementById(test).className = "";
+
+    if(tab == b){
+        tab = t;
+    }else{
+        inning--;
+        tab = b;
+    }
+    test = tab + inning;
+    document.getElementById("inning").innerHTML = test;
+    document.getElementById(test).className = "highlight";
+}
+
 
 function updateScoreBoard(){
     document.getElementById(test).innerHTML = inningScore;
@@ -41,5 +57,16 @@ function scoreUp(){
         teamBScore++;
     }
 
+    updateScoreBoard();
+}
+
+
+function scoreDown(){
+    inningScore--;
+    if(tab == t){
+        teamAScore--;
+    }else{
+        teamBScore--;
+    }
     updateScoreBoard();
 }

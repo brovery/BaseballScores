@@ -42,11 +42,6 @@
             margin-bottom: 15px;
         }
 
-         body {
-             background-color: #009999;
-             color: #06266f;
-         }
-
         .highlight {
             background-color: #a64b00;
             color: #ffd073;
@@ -87,7 +82,7 @@
     </div>
     <div class="row table-bordered">
         <div class="col-xs-2"><h2>Astros</h2></div>
-        <div class="col-xs-1 table-bordered highlight" ><h2 id="top1">0</h2></div>
+        <div class="col-xs-1 table-bordered" ><h2 id="top1" class="highlight">0</h2></div>
         <div class="col-xs-1 table-bordered"><h2 id="top2">0</h2></div>
         <div class="col-xs-1 table-bordered"><h2 id="top3">0</h2></div>
         <div class="col-xs-1 table-bordered"><h2 id="top4">0</h2></div>
@@ -130,7 +125,7 @@
             </div>
             <br/>
             <div class="row">
-                <a class="btn btn-danger btn-lg myBottomButton" href="#" role="button">-</a>
+                <a class="btn btn-danger btn-lg myBottomButton" href="#" onclick="scoreDown()" role="button">-</a>
             </div>
         </div>
 
@@ -157,7 +152,7 @@
             </div>
             <br/>
             <div class="row">
-                <a class="btn btn-danger btn-lg myBottomButton" href="#" role="button">-</a>
+                <a class="btn btn-danger btn-lg myBottomButton" href="#" onclick="inningDown()" role="button">-</a>
             </div>
 
         </div>
